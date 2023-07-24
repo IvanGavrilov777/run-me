@@ -20,4 +20,7 @@ provider "aws" {
 
 module "ec2-in-two-regions" {
     source = "github.com/IvanGavrilov777/terraform-module-two_AWSregions_resource"
+    providers = {
+        aws = aws.region2
+    }
 }
