@@ -17,10 +17,15 @@ provider "aws" {
   alias = "region2"
 }
 
+variable "ec2_type" {
+    description = "EC2 type"
+    default = "t2.micro"
+}
 
 module "ec2-in-two-regions" {
     source = "github.com/IvanGavrilov777/terraform-module-two_AWSregions_resource"
     providers = {
         aws = aws.region2
     }
+    pesho = var.ec2_type
 }
