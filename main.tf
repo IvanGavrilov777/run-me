@@ -24,9 +24,9 @@ variable "ec2_type" {
 
 module "ec2-in-two-regions" {
     source = "github.com/IvanGavrilov777/terraform-module-two_AWSregions_resource"
+    type_of_instance = var.ec2_type
     providers = {
-        aws1 = aws.region1
-        aws2 = aws.region2
+        aws.reg1 = aws.region1
+        aws.reg2 = aws.region2
     }
-    pesho = var.ec2_type
 }
